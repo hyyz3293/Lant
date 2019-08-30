@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppStartTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--冷启动时间更慢 但是点击图标是立即打开视觉效果-->
+        <!--android:theme="@android:style/Theme.NoTitleBar.Fullscreen"-->
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+</resources>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- SimpleRatingBar 控件属性 -->
+    <declare-styleable name="SimpleRatingBar">
+        <!-- 尺寸值 -->
+        <attr name="srbStarImageSize" format="dimension"/>
+        <!-- 星星间距 -->
+        <attr name="srbStarPadding" format="dimension"/>
+        <!-- 星星总数 -->
+        <attr name="srbStarCount" format="integer"/>
+        <!-- 空白的星星资源文件值 -->
+        <attr name="srbStarEmpty" format="reference"/>
+        <!-- 满星资源文件值 -->
+        <attr name="srbStarFull" format="reference"/>
+        <!-- 半星资源文件值 -->
+        <attr name="srbStarHalf" format="reference"/>
+        <!-- 是否可点击boolean值 -->
+        <attr name="srbClickable" format="boolean"/>
+        <!-- 当前进度float值-->
+        <attr name="srbCurStars" format="float"/>
+        <!-- 每次点击，改变进度方式的值，整星还是半星 -->
+        <attr name="srbStepSize">
+            <enum name="Half" value="0"/>
+            <enum name="Full" value="1"/>
+        </attr>
+    </declare-styleable>
+
+    <!-- ScrollTextView 控件属性  -->
+    <declare-styleable name="ScrollTextView">
+        <attr name="stvScrollSpeed" format="float"/>
+    </declare-styleable>
+
+    <!-- SwitchImageView -->
+    <declare-styleable name="SwitchImageView">
+        <attr name="drawableOpen" format="reference"/>
+        <attr name="drawableClose" format="reference"/>
+    </declare-styleable>
+
+    <!-- DrawableCenterRadioButton 控件属性  -->
+    <declare-styleable name="DrawableCenterRadioButton">
+        <!-- 内容的重力属性 -->
+        <attr name="contentGravity" format="integer">
+            <flag name="left" value="3"/>
+            <flag name="top" value="48"/>
+            <flag name="right" value="5"/>
+            <flag name="bottom" value="80"/>
+        </attr>
+    </declare-styleable>
+
+    <!--VerticalTextView-->
+    <declare-styleable name="VerticalTextView">
+        <attr name="vtvText" format="string" />
+        <attr name="vtvTextSize" format="dimension" />
+        <attr name="vtvTextColor" format="color" />
+        <attr name="vtvTextVerticalMargin" format="dimension" />
+        <attr name="vtvTextHorizontalMargin" format="dimension" />
+        <attr name="vtvTextStartOrientation" format="enum">
+            <enum name="left" value="1" />
+            <enum name="right" value="2" />
+        </attr>
+        <attr name="vtvLineWidth" format="dimension" />
+        <attr name="vtvLineColor" format="color" />
+        <attr name="vtvLineOrientation" format="enum">
+            <enum name="none" value="0" />
+            <enum name="left" value="1" />
+            <enum name="right" value="2" />
+        </attr>
+        <attr name="vtvLineTextMargin" format="dimension" />
+        <attr name="vtvCutChar" format="string" />
+    </declare-styleable>
+
+    <!-- ExtendEditText -->
+    <declare-styleable name="ExtendEditText">
+        <attr name="drawableClear" format="reference"/>
+        <attr name="drawablePlaintext" format="reference"/>
+        <attr name="drawableCiphertext" format="reference"/>
+        <attr name="showShakeAnimation" format="boolean"/>
+        <attr name="textSizeHint" format="dimension"/>
+    </declare-styleable>
+
+    <!-- CircularImageView 控件属性  -->
+    <declare-styleable name="CircularImageView">
+        <!-- 形状 -->
+        <attr name="civShape">
+            <!-- 默认 -->
+            <flag name="normal" value="0"/>
+            <!-- 圆形 -->
+            <flag name="circle" value="1"/>
+            <!-- 圆角矩形 -->
+            <flag name="roundRect" value="2"/>
+        </attr>
+        <!-- 注意：以下属性仅对非normal的shape有效 -->
+        <!-- 边框宽度 -->
+        <attr name="civBorder" format="dimension"/>
+        <!-- 边框颜色 -->
+        <attr name="civBorderColor" format="color"/>
+        <!-- 圆角半径(仅对shape为roundRect有效) -->
+        <attr name="civRoundRadius" format="dimension"/>
+    </declare-styleable>
+    <declare-styleable name="RoundImageView">
+        <attr name="type" />
+        <attr name="scale" />
+        <attr name="borderRadius" />
+        <attr name="top_left" />
+        <attr name="top_right" />
+        <attr name="bottom_left" />
+        <attr name="bottom_right" />
+    </declare-styleable>
+
+    <attr name="borderRadius" format="dimension" />
+    <attr name="type">
+        <enum name="circle" value="0" />
+        <enum name="round" value="1" />
+    </attr>
+    <attr name="scale">
+        <enum name="crop" value="0" />
+        <enum name="fit" value="1" />
+    </attr>
+
+    <attr name="top_left" format="boolean" />
+    <attr name="top_right" format="boolean" />
+    <attr name="bottom_left" format="boolean" />
+    <attr name="bottom_right" format="boolean" />
+</resources>  

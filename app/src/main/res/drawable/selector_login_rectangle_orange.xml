@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/shape_round_rec_light_gary_btn_bg" android:state_enabled="true" android:state_pressed="false"/>
+    <item android:drawable="@drawable/shape_round_rec_dark_gary_btn_bg" android:state_enabled="true" android:state_pressed="true"/>
+
+</selector>

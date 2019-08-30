@@ -17,6 +17,21 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    //签名
+    signingConfigs {
+        release {
+            storeFile file('D:/android_studio/work_new/JkxJgInstallJoint/key.jks')//签名文件
+            storePassword "123456"
+            keyAlias "webapp"
+            keyPassword "123456"  //签名密码
+        }
+        debugConfig {
+            keyAlias 'webapp'
+            keyPassword '123456'
+            storeFile file('D:/android_studio/work_new/JkxJgInstallJoint/key.jks')
+            storePassword '123456'
+        }
+    }
 }
 
 dependencies {
@@ -26,4 +41,21 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    // rx lifecycle
+    api 'com.trello.rxlifecycle2:rxlifecycle:2.2.1'
+    api 'com.trello.rxlifecycle2:rxlifecycle-android:2.2.1'
+
+    // 沉浸式状态栏
+    api 'com.jaeger.statusbarutil:library:1.5.1'
+
+    // 网络请求
+    api "com.squareup.retrofit2:retrofit:2.4.0"
+    api "com.squareup.retrofit2:converter-gson:2.4.0"
+    api "com.squareup.retrofit2:adapter-rxjava2:2.4.0"
+
+    //okhttp3
+    api 'com.squareup.okhttp3:okhttp:4.1.0'
+
+    //utilcode库
+    api 'com.blankj:utilcode:1.23.7'
 }

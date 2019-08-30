@@ -1,11 +1,143 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+    <!-- Base application the App主题样式-->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@android:color/transparent</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:divider">@drawable/shape_divider</item>
+        <item name="android:listDivider">@drawable/shape_divider</item>
+        <!--<item name="android:windowAnimationStyle">@style/ActivitySlideForLogin</item>-->
+    </style>
+
+    <style name="AppStartTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--冷启动时间更慢 但是点击图标是立即打开视觉效果 FLAG_TRANSLUCENT_NAVIGATION -->
+        <item name="android:windowBackground">@color/white</item>
+    </style>
+
+    <!--App主题样式 登录页-->
+    <style name="AppThemeForLogin" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:divider">@drawable/shape_divider</item>
+        <item name="android:listDivider">@drawable/shape_divider</item>
+        <item name="android:windowAnimationStyle">@style/ActivitySlide</item>
+        <item name="android:windowBackground">@android:color/white</item>
     </style>
+
+    <!--页面转场侧滑效果-->
+    <style name="ActivitySlide" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/anim_slide_in_from_right</item>
+        <item name="android:activityOpenExitAnimation">@anim/anim_slide_out_to_left</item>
+        <item name="android:activityCloseEnterAnimation">@anim/anim_slide_in_from_left</item>
+        <item name="android:activityCloseExitAnimation">@anim/anim_slide_out_to_right</item>
+    </style>
+
+
+    <!-- 输入框 -->
+    <style name="InputBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/logreg_item_height</item>
+        <item name="android:drawablePadding">@dimen/logreg_drawablePadding</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">15dp</item>
+    </style>
+
+    <!-- 输入框 灰字 -->
+    <style name="InputBox.Grey">
+        <item name="android:textColorHint">#cccccc</item>
+        <item name="android:textColor">#333333</item>
+        <item name="android:background">@null</item>
+
+    </style>
+
+    <!-- 输入框 没带验证码手机号 -->
+    <style name="InputBox.Grey.Phone">
+        <item name="android:inputType">number</item>
+        <item name="android:maxLength">11</item>
+        <item name="android:hint">手机号码</item>
+    </style>
+
+    <!-- 输入框 带验证码手机号 -->
+    <style name="InputBox.Grey.Phone.WithVerifyCode">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">7</item>
+    </style>
+    <!-- 输入框 验证码没带验证码按钮 -->
+    <style name="InputBox.Grey.VerifyCode">
+        <item name="android:inputType">number</item>
+        <item name="android:maxLength">6</item>
+        <item name="android:hint">14sp</item>
+    </style>
+
+    <!-- 输入框 验证码带验证码按钮 -->
+    <style name="InputBox.Grey.VerifyCode.WithVerifyCode">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">7</item>
+    </style>
+
+    <!-- 按钮 获取验证码 -->
+    <style name="VerifyCodeButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/register_height_button_verification</item>
+        <item name="android:layout_marginLeft">@dimen/register_margin_et_btn_hor</item>
+        <item name="android:layout_weight">3</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:text">@string/logreg_get_verification_code</item>
+        <item name="android:textColor">#999999</item>
+    </style>
+
+    <!-- 全屏对话框 -->
+    <style name="FullScreenDialog">
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <!-- 全屏对话框(背景透明) -->
+    <style name="FullScreenDialogTrans" parent="FullScreenDialog">
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+
+    <!-- IosPopupDialog start -->
+    <!-- 样式 -->
+    <style name="IosPopupDialogStyle" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <!-- 标题 -->
+    <style name="IosPopuppDialogTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/ios_popup_dialog_margin_title</item>
+        <item name="android:layout_marginRight">@dimen/ios_popup_dialog_margin_title</item>
+        <item name="android:layout_marginTop">25dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!-- 底部按钮 -->
+    <style name="IosPopupDialogButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/ios_popup_dialog_height_button</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/ios_popup_dialog_blue</item>
+        <item name="android:textSize">@dimen/ios_popup_dialog_button_text_size</item>
+    </style>
+    <!-- IosPopupDialog end -->
 
 </resources>
