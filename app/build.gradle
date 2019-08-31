@@ -58,4 +58,7 @@ dependencies {
 
     //utilcode库
     api 'com.blankj:utilcode:1.23.7'
+
+    //eventbus
+    api 'org.greenrobot:eventbus:3.1.1'
 }

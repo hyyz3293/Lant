@@ -40,7 +40,7 @@ public class LaunchActivity extends AppCompatActivity {
     }
 
     private void jump() {
-        startActivity(new Intent(this, HomeActivity.class));
+        startActivity(new Intent(this, LoginActivity.class));
         finish();
     }
 

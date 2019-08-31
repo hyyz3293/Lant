@@ -1,13 +1,17 @@
 package com.jack.lant.ui.activity;
 
+import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Build;
+import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
 
+import com.blankj.utilcode.util.PermissionUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.jack.lant.R;
 import com.jack.lant.base.AppManager;
@@ -17,11 +21,14 @@ import com.jack.lant.ui.view.PhoneExtendEditText;
 import com.jack.lant.utils.SoftKeyBoardListener;
 import com.jack.lant.utils.StringUtils;
 
+import java.security.Permission;
+import java.util.List;
+
 public class LoginActivity extends BaseActivity implements View.OnClickListener {
 
     private PhoneExtendEditText mEtUser;
     private PhoneExtendEditText mEtPwd;
-    private TextView mTvLogin;
+    private TextView mTvLogin, mTvService, mTvClint, mTvMessage;
 
     @Override
     protected int getLayoutResource() {
@@ -42,6 +49,9 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         mEtPwd = findViewById(R.id.etLoginInnerPhonePasss);
         mTvLogin = findViewById(R.id.btnLoginHint);
 
+        mTvService = findViewById(R.id.btnService);
+        mTvClint = findViewById(R.id.btnClint);
+        mTvMessage = findViewById(R.id.btnMsgTest);
     }
 
     @Override
@@ -62,6 +72,10 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         mEtUser.setOnClickListener(this);
         mEtPwd.setOnClickListener(this);
         mTvLogin.setOnClickListener(this);
+
+        mTvService.setOnClickListener(this);
+        mTvClint.setOnClickListener(this);
+        mTvMessage.setOnClickListener(this);
 
         mEtUser.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
@@ -122,6 +136,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         }
     }
 
+    @SuppressLint("WrongConstant")
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
@@ -134,8 +149,40 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
             case R.id.btnLoginHint:
                 loginBtn();
                 break;
+            case R.id.btnService:
+                openHome(0);
+                break;
+            case R.id.btnClint:
+                openHome(1);
+                break;
+            case R.id.btnMsgTest:
+                PermissionUtils.permission(Manifest.permission.RECEIVE_SMS).callback(new PermissionUtils.FullCallback() {
+                    @Override
+                    public void onGranted(List<String> permissionsGranted) {
+                        startActivity(new Intent(mContext, MessageActivity.class));
+                    }
+
+                    @Override
+                    public void onDenied(List<String> permissionsDeniedForever, List<String> permissionsDenied) {
+
+                    }
+                }).request();
+
+                break;
         }
     }
+
+
+    /**
+     * 打开界面
+     * @param type
+     */
+    private void openHome(int type) {
+        Intent intent = new Intent(this, HomeActivity.class);
+        intent.putExtra("type", type);
+        startActivity(intent);
+    }
+
 
     /** 登录 */
     private void loginBtn() {

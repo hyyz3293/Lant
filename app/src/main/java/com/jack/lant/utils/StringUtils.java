@@ -2,6 +2,8 @@ package com.jack.lant.utils;
 
 import android.content.Context;
 import android.content.res.Configuration;
+import android.net.wifi.WifiInfo;
+import android.net.wifi.WifiManager;
 import android.util.TimeUtils;
 
 import java.math.BigDecimal;
@@ -21,6 +23,17 @@ import java.util.Random;
  * @note -
  */
 public  class StringUtils {
+
+    public static String getlocalip(Context mContext) {
+        WifiManager wifiManager = (WifiManager) mContext.getSystemService(Context.WIFI_SERVICE);
+        WifiInfo wifiInfo = wifiManager.getConnectionInfo();
+        int ipAddress = wifiInfo.getIpAddress();
+        //  Log.d(Tag, "int ip "+ipAddress);
+        if (ipAddress == 0) return null;
+        return ((ipAddress & 0xff) + "." + (ipAddress >> 8 & 0xff) + "."
+                + (ipAddress >> 16 & 0xff) + "." + (ipAddress >> 24 & 0xff));
+    }
+
 
     /**
      * 獲取當前時間
