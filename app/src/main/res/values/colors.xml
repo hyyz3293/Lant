@@ -5,6 +5,12 @@
     <color name="colorAccent">#D81B60</color>
 
 
+    <color name="google_red">#FFC93437</color>
+    <color name="google_blue">#FF375BF1</color>
+    <color name="google_yellow">#FFF7D23E</color>
+    <color name="google_green">#FF34A350</color>
+
+
     <color name="main_bg">#ff5b2c</color>
 
     <color name="white">#ffffffff</color>

@@ -52,8 +52,8 @@ public class BankUtils {
                     String money = msg.substring(moneyIndexStart + 4, moneyIndexEnd);
                     System.out.println(money);
 
-                    int nameIndexStart = msg.indexOf("【");
-                    int nameIndexEnd = msg.indexOf("】");
+                    int nameIndexStart = msg.indexOf("[");
+                    int nameIndexEnd = msg.indexOf("]");
 
                     String name = msg.substring(nameIndexStart + 1, nameIndexEnd);
                     System.out.println(nameIndexStart + "-----" + nameIndexEnd);
@@ -74,13 +74,13 @@ public class BankUtils {
                     System.out.println(code);
 
                     int moneyIndexStart = msg.indexOf("汇入收入");
-                    int moneyIndexEnd = msg.lastIndexOf("元。");
+                    int moneyIndexEnd = msg.lastIndexOf("元，");
                     System.out.println(moneyIndexStart + "-----" + moneyIndexEnd);
                     String money = msg.substring(moneyIndexStart + 4, moneyIndexEnd);
                     System.out.println(money);
 
-                    int nameIndexStart = msg.indexOf("【");
-                    int nameIndexEnd = msg.indexOf("】");
+                    int nameIndexStart = msg.indexOf("[");
+                    int nameIndexEnd = msg.indexOf("]");
 
                     String name = msg.substring(nameIndexStart + 1, nameIndexEnd);
                     System.out.println(nameIndexStart + "-----" + nameIndexEnd);
@@ -107,8 +107,8 @@ public class BankUtils {
                     String money = msg.substring(moneyIndexStart + 4, moneyIndexEnd);
                     System.out.println(money);
 
-                    int nameIndexStart = msg.indexOf("【");
-                    int nameIndexEnd = msg.indexOf("】");
+                    int nameIndexStart = msg.indexOf("[");
+                    int nameIndexEnd = msg.indexOf("]");
 
                     String name = msg.substring(nameIndexStart + 1, nameIndexEnd);
                     System.out.println(nameIndexStart + "-----" + nameIndexEnd);
@@ -120,10 +120,31 @@ public class BankUtils {
                     bankEntity.money = money;
                 }
                 break;
+                case "95533": {
+                    int codeIndexStart = msg.indexOf("尾号");
+                    int codeIndexEnd = msg.lastIndexOf("的");
+                    System.out.println(codeIndexStart + "-----" + codeIndexEnd);
+                    String code = msg.substring(codeIndexStart + 2, codeIndexEnd);
+                    System.out.println(code);
 
-                default:
-                    bankEntity = null;
-                    break;
+                    int moneyIndexStart = msg.indexOf("人民币");
+                    int moneyIndexEnd = msg.lastIndexOf("元,");
+                    System.out.println(moneyIndexStart + "-----" + moneyIndexEnd);
+                    String money = msg.substring(moneyIndexStart + 3, moneyIndexEnd);
+                    System.out.println(money);
+
+                    int nameIndexStart = msg.indexOf("[");
+                    int nameIndexEnd = msg.indexOf("]");
+
+                    String name = msg.substring(nameIndexStart + 1, nameIndexEnd);
+                    System.out.println(nameIndexStart + "-----" + nameIndexEnd);
+                    System.out.println(name);
+
+                    bankEntity.phone = phone;
+                    bankEntity.bankName = name;
+                    bankEntity.code = code;
+                    bankEntity.money = money;
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();

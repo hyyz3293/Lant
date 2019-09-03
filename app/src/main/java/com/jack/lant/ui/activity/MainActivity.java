@@ -1,6 +1,5 @@
 package com.jack.lant.ui.activity;
 
-import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Build;
 import android.util.SparseArray;

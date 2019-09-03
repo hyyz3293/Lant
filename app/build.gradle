@@ -7,8 +7,8 @@ android {
         applicationId "com.jack.lant"
         minSdkVersion 16
         targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "2.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -61,4 +61,14 @@ dependencies {
 
     //eventbus
     api 'org.greenrobot:eventbus:3.1.1'
+
+    //recyclerview适配器
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.42'
+
+    //聊天組件
+    api 'cn.jiguang.imui:messagelist:0.8.0'
+    api 'cn.jiguang.imui:chatinput:0.10.0'
+
+
+
 }

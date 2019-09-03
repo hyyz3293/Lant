@@ -4,7 +4,6 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Build;
-import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -16,12 +15,13 @@ import com.blankj.utilcode.util.ToastUtils;
 import com.jack.lant.R;
 import com.jack.lant.base.AppManager;
 import com.jack.lant.base.BaseActivity;
+import com.jack.lant.ui.activity.simple.LanClientActivity;
+import com.jack.lant.ui.activity.simple.LanServiceActivity;
 import com.jack.lant.ui.model.UserInfoEntity;
 import com.jack.lant.ui.view.PhoneExtendEditText;
 import com.jack.lant.utils.SoftKeyBoardListener;
 import com.jack.lant.utils.StringUtils;
 
-import java.security.Permission;
 import java.util.List;
 
 public class LoginActivity extends BaseActivity implements View.OnClickListener {
@@ -150,10 +150,10 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                 loginBtn();
                 break;
             case R.id.btnService:
-                openHome(0);
+                startActivity(new Intent(this, LanServiceActivity.class));
                 break;
             case R.id.btnClint:
-                openHome(1);
+                startActivity(new Intent(this, LanClientActivity.class));
                 break;
             case R.id.btnMsgTest:
                 PermissionUtils.permission(Manifest.permission.RECEIVE_SMS).callback(new PermissionUtils.FullCallback() {
@@ -173,15 +173,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     }
 
 
-    /**
-     * 打开界面
-     * @param type
-     */
-    private void openHome(int type) {
-        Intent intent = new Intent(this, HomeActivity.class);
-        intent.putExtra("type", type);
-        startActivity(intent);
-    }
 
 
     /** 登录 */
@@ -198,7 +189,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         }
         AppManager.getInstance().setUserInfoEntity(user, pwd);
         mTvLogin.setClickable(false);
-        Intent intent = new Intent(mContext, HomeActivity.class);
+        Intent intent = new Intent(mContext, LanServiceActivity.class);
         startActivity(intent);
         finish();
     }

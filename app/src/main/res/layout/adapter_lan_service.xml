@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="20dp"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:id="@+id/adapter_left"
+        android:visibility="visible"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:layout_marginLeft="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+
+        <TextView
+            android:id="@+id/adapter_service_content"
+            android:textSize="16dp"
+            android:text="xxxxx "
+            android:textColor="#333333"
+            android:paddingTop="10dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/adapter_service_time"
+            android:textSize="14dp"
+            android:text="xxxxxxxxxx"
+            android:textColor="#999999"
+            android:paddingTop="10dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/adapter_right"
+        android:visibility="visible"
+        android:orientation="vertical"
+        android:layout_alignParentRight="true"
+        android:background="@color/white"
+        android:layout_marginRight="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true">
+
+
+        <TextView
+            android:id="@+id/adapter_service_content2"
+            android:gravity="right"
+            android:textSize="16dp"
+            android:text="aaaaaaaaaaaaaa"
+            android:textColor="#333333"
+            android:paddingTop="10dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/adapter_service_time2"
+            android:gravity="right"
+            android:textSize="14dp"
+            android:text="1111111111111"
+            android:textColor="#999999"
+            android:paddingTop="10dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

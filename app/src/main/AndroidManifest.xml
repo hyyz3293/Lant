@@ -39,12 +39,25 @@
             android:screenOrientation="portrait"  />
 
         <activity
+            android:name=".ui.activity.ChatActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
             android:name=".ui.activity.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
 
         <activity
-            android:name=".ui.activity.HomeActivity"
+            android:name=".ui.activity.simple.LanServiceActivity"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:windowSoftInputMode="adjustResize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeForLogin" />
+
+        <activity
+            android:name=".ui.activity.simple.LanClientActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
 

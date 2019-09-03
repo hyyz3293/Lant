@@ -91,29 +91,48 @@ public class ExampleUnitTest {
 
 
 
-        String msg = "你的537xxxx1账号4月18快捷支付(退款xxxxxxxxx公可用转入收入5110110人民币。【工商银行】";
 
-        int codeIndexStart = msg.indexOf("你的");
-        int codeIndexEnd = msg.lastIndexOf("账号");
+//        String msg = "你的537xxxx1账号4月18快捷支付(退款xxxxxxxxx公可用转入收入5110110人民币。【工商银行】";
+//        int codeIndexStart = msg.indexOf("你的");
+//        int codeIndexEnd = msg.lastIndexOf("账号");
+//        System.out.println(codeIndexStart + "-----" + codeIndexEnd);
+//        String code = msg.substring(codeIndexStart + 2, codeIndexEnd);
+//        System.out.println(code);
+//
+//        int moneyIndexStart = msg.indexOf("转入收入");
+//        int moneyIndexEnd = msg.lastIndexOf("人民币");
+//        System.out.println(moneyIndexStart + "-----" + moneyIndexEnd);
+//        String money = msg.substring(moneyIndexStart + 4, moneyIndexEnd);
+//        System.out.println(money);
+//
+//        int nameIndexStart = msg.indexOf("【");
+//        int nameIndexEnd = msg.indexOf("】");
+//
+//        String name = msg.substring(nameIndexStart + 1, nameIndexEnd);
+//        System.out.println(nameIndexStart + "-----" + nameIndexEnd);
+//        System.out.println(name);
+
+
+        String msg = "您尾号9990的理财卡9月1日10时52分充值支出人民币11.10元,活期余额9712.74元。[建设银行]";
+
+        int codeIndexStart = msg.indexOf("尾号");
+        int codeIndexEnd = msg.lastIndexOf("的");
         System.out.println(codeIndexStart + "-----" + codeIndexEnd);
         String code = msg.substring(codeIndexStart + 2, codeIndexEnd);
         System.out.println(code);
 
-        int moneyIndexStart = msg.indexOf("转入收入");
-        int moneyIndexEnd = msg.lastIndexOf("人民币");
+        int moneyIndexStart = msg.indexOf("人民币");
+        int moneyIndexEnd = msg.lastIndexOf("元,");
         System.out.println(moneyIndexStart + "-----" + moneyIndexEnd);
-        String money = msg.substring(moneyIndexStart + 4, moneyIndexEnd);
+        String money = msg.substring(moneyIndexStart + 3, moneyIndexEnd);
         System.out.println(money);
 
-        int nameIndexStart = msg.indexOf("【");
-        int nameIndexEnd = msg.indexOf("】");
+        int nameIndexStart = msg.indexOf("[");
+        int nameIndexEnd = msg.indexOf("]");
 
         String name = msg.substring(nameIndexStart + 1, nameIndexEnd);
         System.out.println(nameIndexStart + "-----" + nameIndexEnd);
         System.out.println(name);
-
-
-
 
 
 

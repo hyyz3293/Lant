@@ -61,6 +61,18 @@ public class MessageActivity extends BaseActivity {
         mTvBankName = findViewById(R.id.bank_name);
         mTvBankMoney = findViewById(R.id.bank_money);
         mTvBankCode = findViewById(R.id.bank_code);
+
+
+//        //LogUtils.e(event.address);
+//        //LogUtils.e(event.msg);
+//       // mTvPhone.setText("来源：" + event.address);
+//        //mTvContent.setText(event.msg);
+//        BankEntity bankEntity = BankUtils.messageBank("95561", "02日16:46账户*8851*汇款汇入收入100.00元，余额949.74元。对方户名:张奇辉[兴业银行]");
+//        if (bankEntity != null) {
+//            mTvBankName.setText("银行名字：" + StringUtils.valueOf(bankEntity.bankName));
+//            mTvBankMoney.setText("金额：" + StringUtils.valueOf(bankEntity.money));
+//            mTvBankCode.setText("尾号：" + StringUtils.valueOf(bankEntity.code));
+//        }
     }
 
     @Override
