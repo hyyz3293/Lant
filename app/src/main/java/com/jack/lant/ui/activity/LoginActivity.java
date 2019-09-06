@@ -28,7 +28,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
     private PhoneExtendEditText mEtUser;
     private PhoneExtendEditText mEtPwd;
-    private TextView mTvLogin, mTvService, mTvClint, mTvMessage;
+    private TextView mTvLogin, mTvService, mTvClint, mTvMessage, mTvSlide;
 
     @Override
     protected int getLayoutResource() {
@@ -52,6 +52,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         mTvService = findViewById(R.id.btnService);
         mTvClint = findViewById(R.id.btnClint);
         mTvMessage = findViewById(R.id.btnMsgTest);
+        mTvSlide = findViewById(R.id.btnSlideTest);
     }
 
     @Override
@@ -76,6 +77,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         mTvService.setOnClickListener(this);
         mTvClint.setOnClickListener(this);
         mTvMessage.setOnClickListener(this);
+        mTvSlide.setOnClickListener(this);
 
         mEtUser.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
@@ -167,7 +169,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
                     }
                 }).request();
-
                 break;
         }
     }

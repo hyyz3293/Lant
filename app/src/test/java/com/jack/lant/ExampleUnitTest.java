@@ -1,5 +1,7 @@
 package com.jack.lant;
 
+import android.util.Log;
+
 import com.blankj.utilcode.util.LogUtils;
 
 import org.junit.Test;
@@ -113,27 +115,57 @@ public class ExampleUnitTest {
 //        System.out.println(name);
 
 
-        String msg = "您尾号9990的理财卡9月1日10时52分充值支出人民币11.10元,活期余额9712.74元。[建设银行]";
+        String msg = "您尾数为2916的账号于9月1日转入15.00元,余额78.68元,对方户名：财付通支付科技有限公司【厦门银行】";
+       // String msg = "您尾数为2916的账号于9月4日转入0903顺昌县迅达手机店0.01元,余额78.69元【厦门银行】";
 
-        int codeIndexStart = msg.indexOf("尾号");
-        int codeIndexEnd = msg.lastIndexOf("的");
+
+        int codeIndexStart = msg.indexOf("尾数为");
+        int codeIndexEnd = msg.lastIndexOf("的账号");
         System.out.println(codeIndexStart + "-----" + codeIndexEnd);
-        String code = msg.substring(codeIndexStart + 2, codeIndexEnd);
+        String code = msg.substring(codeIndexStart + 3, codeIndexEnd);
         System.out.println(code);
 
-        int moneyIndexStart = msg.indexOf("人民币");
-        int moneyIndexEnd = msg.lastIndexOf("元,");
+        int moneyIndexStart = msg.indexOf("转入");
+        int moneyIndexEnd = msg.indexOf("元,");
         System.out.println(moneyIndexStart + "-----" + moneyIndexEnd);
-        String money = msg.substring(moneyIndexStart + 3, moneyIndexEnd);
+        String money = msg.substring(moneyIndexStart + 2, moneyIndexEnd);
         System.out.println(money);
 
-        int nameIndexStart = msg.indexOf("[");
-        int nameIndexEnd = msg.indexOf("]");
+        int nameIndexStart = msg.indexOf("【");
+        int nameIndexEnd = msg.indexOf("】");
 
         String name = msg.substring(nameIndexStart + 1, nameIndexEnd);
         System.out.println(nameIndexStart + "-----" + nameIndexEnd);
         System.out.println(name);
 
+//        int codeIndexStart = msg.indexOf("尾数为");
+//        int codeIndexEnd = msg.lastIndexOf("的账号");
+//        System.out.println(codeIndexStart + "-----" + codeIndexEnd);
+//        String code = msg.substring(codeIndexStart + 3, codeIndexEnd);
+//        System.out.println(code);
+//
+//        int moneyIndexStart = msg.indexOf("转入");
+//        int moneyIndexEnd = moneyIndexStart + 2 + 4;
+//        System.out.println(moneyIndexStart + "-----" + moneyIndexEnd);
+//
+//        int numberAas = -1;
+//        for (int i = 0; i < 10; i++) {
+//            numberAas = msg.indexOf(i + "", moneyIndexEnd);
+//            if (numberAas > 0)
+//                break;
+//        }
+//
+//        System.out.println( "``````````````````````````````" + numberAas);
+//        int moneyIndexStart2 = msg.indexOf("元,");
+//        String money = msg.substring(numberAas, moneyIndexStart2);
+//        System.out.println(money);
+//
+//        int nameIndexStart = msg.indexOf("【");
+//        int nameIndexEnd = msg.indexOf("】");
+//
+//        String name = msg.substring(nameIndexStart + 1, nameIndexEnd);
+//        System.out.println(nameIndexStart + "-----" + nameIndexEnd);
+//        System.out.println(name);
 
 
     }

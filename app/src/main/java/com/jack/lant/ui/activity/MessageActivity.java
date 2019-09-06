@@ -67,7 +67,7 @@ public class MessageActivity extends BaseActivity {
 //        //LogUtils.e(event.msg);
 //       // mTvPhone.setText("来源：" + event.address);
 //        //mTvContent.setText(event.msg);
-//        BankEntity bankEntity = BankUtils.messageBank("95561", "02日16:46账户*8851*汇款汇入收入100.00元，余额949.74元。对方户名:张奇辉[兴业银行]");
+//        BankEntity bankEntity = BankUtils.messageBank("106980096319", "您尾数为2916的账号于9月4日转入0903顺昌县迅达手机店0.01元,余额78.69元【厦门银行】");
 //        if (bankEntity != null) {
 //            mTvBankName.setText("银行名字：" + StringUtils.valueOf(bankEntity.bankName));
 //            mTvBankMoney.setText("金额：" + StringUtils.valueOf(bankEntity.money));
