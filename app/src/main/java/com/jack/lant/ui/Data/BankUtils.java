@@ -98,20 +98,20 @@ public class BankUtils {
                 break;
 
                 case "106980096336": {
-                    int codeIndexStart = msg.indexOf("你的");
-                    int codeIndexEnd = msg.lastIndexOf("账号");
+                    int codeIndexStart = msg.indexOf("您的");
+                    int codeIndexEnd = msg.lastIndexOf("个人账户");
                     System.out.println(codeIndexStart + "-----" + codeIndexEnd);
                     String code = msg.substring(codeIndexStart + 2, codeIndexEnd);
                     System.out.println(code);
 
                     int moneyIndexStart = msg.indexOf("转入收入");
-                    int moneyIndexEnd = msg.lastIndexOf("人民币");
+                    int moneyIndexEnd = msg.indexOf("人民币");
                     System.out.println(moneyIndexStart + "-----" + moneyIndexEnd);
                     String money = msg.substring(moneyIndexStart + 4, moneyIndexEnd);
                     System.out.println(money);
 
-                    int nameIndexStart = msg.indexOf("[");
-                    int nameIndexEnd = msg.indexOf("]");
+                    int nameIndexStart = msg.indexOf("【");
+                    int nameIndexEnd = msg.indexOf("】");
 
                     String name = msg.substring(nameIndexStart + 1, nameIndexEnd);
                     System.out.println(nameIndexStart + "-----" + nameIndexEnd);
