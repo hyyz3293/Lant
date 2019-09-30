@@ -28,7 +28,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
     private PhoneExtendEditText mEtUser;
     private PhoneExtendEditText mEtPwd;
-    private TextView mTvLogin, mTvService, mTvClint, mTvMessage, mTvSlide;
+    private TextView mTvLogin, mTvService, mTvClint, mTvMessage, mTvMessage2, mTvSlide, mTvService2;
 
     @Override
     protected int getLayoutResource() {
@@ -51,8 +51,10 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
         mTvService = findViewById(R.id.btnService);
         mTvClint = findViewById(R.id.btnClint);
-        mTvMessage = findViewById(R.id.btnMsgTest);
+        mTvMessage = findViewById(R.id.btnMsgTest1);
+        mTvMessage2 = findViewById(R.id.btnMsgTest2);
         mTvSlide = findViewById(R.id.btnSlideTest);
+        mTvService2 = findViewById(R.id.btnServiceTest);
     }
 
     @Override
@@ -78,6 +80,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         mTvClint.setOnClickListener(this);
         mTvMessage.setOnClickListener(this);
         mTvSlide.setOnClickListener(this);
+        mTvService2.setOnClickListener(this);
+        mTvMessage2.setOnClickListener(this);
 
         mEtUser.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
@@ -157,7 +161,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
             case R.id.btnClint:
                 startActivity(new Intent(this, LanClientActivity.class));
                 break;
-            case R.id.btnMsgTest:
+            case R.id.btnMsgTest1:
                 PermissionUtils.permission(Manifest.permission.RECEIVE_SMS).callback(new PermissionUtils.FullCallback() {
                     @Override
                     public void onGranted(List<String> permissionsGranted) {
@@ -169,6 +173,22 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
                     }
                 }).request();
+                break;
+            case R.id.btnMsgTest2:
+                PermissionUtils.permission(Manifest.permission.RECEIVE_SMS).callback(new PermissionUtils.FullCallback() {
+                    @Override
+                    public void onGranted(List<String> permissionsGranted) {
+                        startActivity(new Intent(mContext, Message2Activity.class));
+                    }
+
+                    @Override
+                    public void onDenied(List<String> permissionsDeniedForever, List<String> permissionsDenied) {
+
+                    }
+                }).request();
+                break;
+            case R.id.btnServiceTest:
+                startActivity(new Intent(mContext, AsyncActivity.class));
                 break;
         }
     }

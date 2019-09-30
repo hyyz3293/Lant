@@ -10,6 +10,8 @@ android {
         versionCode 2
         versionName "2.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -17,6 +19,17 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    packagingOptions {
+        //解决编译时com.android.builder.merge.DuplicateRelativeFileException: More than one file was found with OS independent path 'META-INF/rxjava.properties'这个错误
+        exclude 'META-INF/rxjava.properties'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     //签名
     signingConfigs {
         release {
@@ -69,6 +82,10 @@ dependencies {
     api 'cn.jiguang.imui:messagelist:0.8.0'
     api 'cn.jiguang.imui:chatinput:0.10.0'
 
+    api 'com.koushikdutta.async:androidasync:2.2.1'
+    api 'com.jakewharton.timber:timber:4.5.1'
+    api 'com.hwangjr.rxbus:rxbus:1.0.6'
 
+    //implementation 'com.google.android.exoplayer:exoplayer:2.X.X'
 
 }

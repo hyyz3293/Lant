@@ -11,7 +11,7 @@
         android:id="@+id/ivLoginLogo"
         android:orientation="vertical"
         android:gravity="center"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="1dp"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_gravity="center_horizontal">
@@ -43,7 +43,7 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="170dp"
+                android:layout_height="70dp"
                 android:visibility="invisible" />
 
             <!-- 用户名 -->
@@ -211,7 +211,7 @@
 
 
             <LinearLayout
-                 android:layout_marginTop="50dp"
+                 android:layout_marginTop="10dp"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" >
@@ -245,20 +245,43 @@
                     />
             </LinearLayout>
 
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
 
             <TextView
-                android:id="@+id/btnMsgTest"
-                android:layout_marginTop="15dp"
+                android:id="@+id/btnMsgTest1"
                 android:layout_gravity="center"
                 android:layout_width="150dp"
                 android:layout_height="@dimen/logreg_item_height"
                 android:background="@drawable/selector_round_rectangle_orange"
-                android:text="监听测试"
+                android:text="短信监听测试1"
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 android:gravity="center"
                 android:visibility="visible"
                 />
+
+            <TextView
+                android:id="@+id/btnMsgTest2"
+                android:layout_gravity="center"
+                android:layout_width="150dp"
+                android:layout_height="@dimen/logreg_item_height"
+                android:background="@drawable/selector_round_rectangle_orange"
+                android:text="短信监听测试2"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:visibility="visible"
+                />
+
+        </LinearLayout>
+
+
+
 
             <TextView
                 android:id="@+id/btnSlideTest"
@@ -268,6 +291,20 @@
                 android:layout_height="@dimen/logreg_item_height"
                 android:background="@drawable/selector_round_rectangle_orange"
                 android:text="滑动测试"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:visibility="visible"
+                />
+
+            <TextView
+                android:id="@+id/btnServiceTest"
+                android:layout_marginTop="15dp"
+                android:layout_gravity="center"
+                android:layout_width="150dp"
+                android:layout_height="@dimen/logreg_item_height"
+                android:background="@drawable/selector_round_rectangle_orange"
+                android:text="服务器2测试"
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 android:gravity="center"

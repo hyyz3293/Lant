@@ -148,6 +148,7 @@ public class BankUtils {
                     bankEntity.code = code;
                     bankEntity.money = money;
                 }
+                break;
                 case "95580": {
                     int codeIndexStart = msg.indexOf("尾号");
                     int codeIndexEnd = msg.lastIndexOf("账户");
